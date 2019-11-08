@@ -19,9 +19,9 @@ server
   .disable('x-powered-by')
   .use(
     '/api',
-    proxy(process.env.API, {
+    proxy(process.env.RAZZLE_API, {
       proxyReqOptDecorator(opts) {
-        opts.headers['x-forwarded-host'] = process.env.CURRENT_HOST
+        opts.headers['x-forwarded-host'] = process.env.RAZZLE_HOST
         return opts
       }
     })

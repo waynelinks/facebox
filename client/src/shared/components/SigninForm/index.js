@@ -17,6 +17,8 @@ const SinginForm = ({ signinUser }) => {
 
   const onSubmit = payload => signinUser(payload)
 
+  console.log('Signin: ',process.env.RAZZLE_API)
+
   return (
     <Fragment>
       <div className='form-container'>

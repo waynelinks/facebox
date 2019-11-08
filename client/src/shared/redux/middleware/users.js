@@ -10,15 +10,16 @@ import { apiRequest } from '../actions/api'
 import { setUser } from '../actions/users'
 import { setNotification } from '../actions/notifications'
 
-export const userMiddleware = data => next => action => {
-  console.log('Middleware', data)
+export const userMiddleware = ({ dispatch }) => next => action => {
   next(action)
+  console.log('dispatch', dispatch)
 
   switch (action.type) {
     case SIGNUP_USER:
       next(
         apiRequest({
-          body: data,
+          email,
+          password,
           method: 'POST',
           url: FACEBOX_API,
           entity: USER
@@ -27,14 +28,8 @@ export const userMiddleware = data => next => action => {
       break
 
     case SIGNIN_USER:
-      next(
-        apiRequest({
-          body: data,
-          method: 'POST',
-          url: FACEBOX_API,
-          entity: USER
-        })
-      )
+      console.log('API: ',process.env.RAZZLE_API)
+      dispatch(apiRequest(action.payload, 'post', process.env.API, USER))
       break
 
     case API_SUCCESS:

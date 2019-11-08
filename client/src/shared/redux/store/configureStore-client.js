@@ -1,9 +1,10 @@
 import Axios from 'axios'
 import { createStore, applyMiddleware } from 'redux'
-import { composeWithDevTools } from 'redux-devtools-extension';
+import { composeWithDevTools } from 'redux-devtools-extension'
 
 import rootReducer from '../reducers'
 import thunk from 'redux-thunk'
+import { userMiddleware } from '../middleware/users'
 
 export default preloadedState => {
   const axiosInstance = Axios.create({
@@ -13,7 +14,9 @@ export default preloadedState => {
   const store = createStore(
     rootReducer,
     preloadedState,
-    composeWithDevTools(applyMiddleware(thunk.withExtraArgument(axiosInstance)))
+    composeWithDevTools(
+      applyMiddleware(thunk.withExtraArgument(axiosInstance), userMiddleware)
+    )
   )
 
   if (module.hot) {

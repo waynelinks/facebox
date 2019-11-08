@@ -1,13 +1,23 @@
 import { SIGNUP_USER, SET_USER, SIGNIN_USER } from '../constants'
 
-export const signupUser = ({ query }) => ({
+export const signupUser = payload => ({
   type: SIGNUP_USER,
-  payload: query
+  payload
 })
 
-export const signinUser = ({ query }) => ({
+// export const signinUser = (payload) => async (dispatch, getState, api) => {
+//   console.log('Action: ', payload)
+//   debugger
+
+//   dispatch({
+//     type: SIGNIN_USER,
+//     payload
+//   });
+// };
+
+export const signinUser = payload => ({
   type: SIGNIN_USER,
-  payload: query
+  payload
 })
 
 export const setUser = user => ({
