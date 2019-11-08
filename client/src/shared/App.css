@@ -1,3 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-size: 1em;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .App-container {
   height: 100vh;
   background: white;
@@ -9,5 +25,5 @@
   grid-template-areas:
     'nav nav nav nav'
     '. welcome welcome .'
-    '. home home .'
+    '. home home .';
 }

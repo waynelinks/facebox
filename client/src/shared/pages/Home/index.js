@@ -1,13 +1,21 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 
-const Home = () => {
-  return (
-    <div>
-      <h1>Home</h1>
-    </div>
-  )
+const Home = ({ session }) => {
+  if (session) {    
+    return (
+      <div className='home-container'>Home</div>
+    )    
+  }
+  
+  return <Redirect to='/signin' />
 }
 
+const mapStateToProps = ({ users }) => ({
+  session: users.session
+})
+
 export default {
-  component: Home
+  component: connect(mapStateToProps)(Home)
 }

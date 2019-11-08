@@ -6,7 +6,6 @@ import { renderRoutes } from 'react-router-config'
 
 import configureStore from '../shared/redux/store/configureStore-client'
 import Routes from '../shared/routes'
-import './index.css'
 
 const store = configureStore(window.__PRELOADED_STATE__)
 

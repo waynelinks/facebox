@@ -6,7 +6,7 @@ export const SET_USER = 'SET_USER'
 export const SET_NOTIFICATION = 'SET_NOTIFICATION'
 export const REMOVE_NOTIFICATION = 'REMOVE_NOTIFICATION'
 
-export const FACEBOX_API = process.env.FACEBOX_API_PROXY
+export const FACEBOX_API = process.env.API
 
 export const API_REQUEST = 'API_REQUEST'
 export const API_SUCCESS = 'API_SUCCESS'

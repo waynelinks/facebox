@@ -11,6 +11,7 @@ import { setUser } from '../actions/users'
 import { setNotification } from '../actions/notifications'
 
 export const userMiddleware = data => next => action => {
+  console.log('Middleware', data)
   next(action)
 
   switch (action.type) {

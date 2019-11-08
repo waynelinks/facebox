@@ -1,0 +1,86 @@
+.form-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+h3 {
+  font-weight: 400;
+  margin: 1em;
+}
+
+form {
+  padding: 2em;
+  width: 20em;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  box-shadow: 0 29px 60px 0 rgba(54,57,73,0.4);
+}
+
+.field-group {
+  position: relative;
+  width: 100%;
+}
+
+label {
+  pointer-events: none;
+  display: inline-block;
+  position: absolute;
+  left: 15px;
+  top: 22px;
+  transition: all 150ms ease-in;
+  color: grey;
+}
+
+label.field-active {
+  background: white;
+  padding: 0 0.3em;
+  transform: translateY(-22px);
+  font-size: 0.9em;
+  color: #000;
+  text-shadow: 1px 0 0 #fff, -1px 0 0 #fff, 2px 0 0 #fff, -2px 0 0 #fff,
+    0 1px 0 #fff, 0 -1px 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'] {
+  background: none;
+  width: 90%;
+  height: 25px;
+  line-height: 25px;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #4267b2;
+  border-radius: 5px;
+  padding: 1em;
+  margin: 0.7em 0;
+  box-sizing: content-box;
+}
+
+.error {
+  color: crimson;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  margin: 1em;
+  color: #fff;
+  background: #4267b2;
+  padding: 1em;
+  border: none;
+  border-radius: 5px;
+  width: 80%;
+  cursor: pointer;
+}
+
+.signin2register {
+  margin: 1em;
+  color: gray;
+}

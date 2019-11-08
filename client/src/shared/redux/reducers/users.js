@@ -1,6 +1,8 @@
 import { SET_USER } from '../constants'
 
-const initialState = {}
+const initialState = {
+  session: false
+}
 
 export default (state = initialState, { type, payload }) => {
   switch (type) {
