@@ -5,16 +5,6 @@ export const signupUser = payload => ({
   payload
 })
 
-// export const signinUser = (payload) => async (dispatch, getState, api) => {
-//   console.log('Action: ', payload)
-//   debugger
-
-//   dispatch({
-//     type: SIGNIN_USER,
-//     payload
-//   });
-// };
-
 export const signinUser = payload => ({
   type: SIGNIN_USER,
   payload

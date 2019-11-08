@@ -1,24 +1,16 @@
-import { API_REQUEST, API_SUCCESS, API_ERROR, USER } from '../constants'
+import { API_REQUEST, API_SUCCESS, API_ERROR } from '../constants'
 
-// export const apiRequest = ({ body, method, url, entity }) => ({
-//   type: API_REQUEST,
-//   payload: body,
-//   meta: { method, url, entity }
-// })
-
-export const apiRequest = (payload, method, url, entity) => ({
-  type: `${USER} ${API_REQUEST}`,
-  payload: { data: payload, meta: { method, url, entity } }
+export const apiRequest = ({ email, password }, method, url, entity) => ({
+  type: `${entity} ${API_REQUEST}`,
+  payload: { email, password, method, url, entity }
 })
 
-export const apiSuccess = ({ response, entity }) => ({
-  type: `${USER} ${API_SUCCESS}`,
-  payload: response,
-  meta: { entity }
+export const apiSuccess = (response, entity) => ({
+  type: `${entity} ${API_SUCCESS}`,
+  payload: { response, entity }
 })
 
-export const apiERROR = ({ error, entity }) => ({
-  type: `${USER} ${API_ERROR}`,
-  payload: error,
-  meta: { entity }
+export const apiERROR = (error, entity) => ({
+  type: `${entity} ${API_ERROR}`,
+  error
 })

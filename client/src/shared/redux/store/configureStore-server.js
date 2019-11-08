@@ -6,7 +6,7 @@ import rootReducer from '../reducers'
 
 export default req => {
   const axiosInstance = Axios.create({
-    baseURL: process.env.API
+    baseURL: process.env.RAZZLE_API
   })
 
   const store = createStore(

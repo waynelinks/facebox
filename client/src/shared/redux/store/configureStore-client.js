@@ -5,6 +5,7 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import rootReducer from '../reducers'
 import thunk from 'redux-thunk'
 import { userMiddleware } from '../middleware/users'
+import { apiMiddleware } from '../middleware/api'
 
 export default preloadedState => {
   const axiosInstance = Axios.create({
@@ -15,7 +16,11 @@ export default preloadedState => {
     rootReducer,
     preloadedState,
     composeWithDevTools(
-      applyMiddleware(thunk.withExtraArgument(axiosInstance), userMiddleware)
+      applyMiddleware(
+        thunk.withExtraArgument(axiosInstance),
+        userMiddleware,
+        apiMiddleware
+      )
     )
   )
 

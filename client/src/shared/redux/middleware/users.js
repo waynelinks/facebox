@@ -12,7 +12,6 @@ import { setNotification } from '../actions/notifications'
 
 export const userMiddleware = ({ dispatch }) => next => action => {
   next(action)
-  console.log('dispatch', dispatch)
 
   switch (action.type) {
     case SIGNUP_USER:
@@ -28,25 +27,19 @@ export const userMiddleware = ({ dispatch }) => next => action => {
       break
 
     case SIGNIN_USER:
-      console.log('API: ',process.env.RAZZLE_API)
-      dispatch(apiRequest(action.payload, 'post', process.env.API, USER))
+      dispatch(apiRequest(action.payload, 'POST', FACEBOX_API, USER))
       break
 
-    case API_SUCCESS:
-      next(
+    case `${USER} ${API_SUCCESS}`:
+      dispatch(
         setUser({
           user: action.payload
         })
       )
       break
 
-    case API_ERROR:
-      next(
-        setNotification({
-          message: action.payload,
-          entity: USER
-        })
-      )
+    case `${USER} ${API_ERROR}`:
+      dispatch(setNotification(action.payload, USER))
       break
   }
 }

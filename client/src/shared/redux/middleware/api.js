@@ -1,19 +1,17 @@
 import axios from 'axios'
-import { API_REQUEST, FACEBOX_API } from '../constants'
+import { API_REQUEST, FACEBOX_API, USER } from '../constants'
 import { apiSuccess, apiERROR } from '../actions/api'
 
-export const apiMiddleware = async ({ dispatch }) => next => action => {
-  // next(action)
+export const apiMiddleware = ({ dispatch }) => next => async action => {
+  next(action)
 
-  // if (action.type.includes(API_REQUEST)) {
-  //   const { body, url, method, entity } = action.meta
-
-  //   try {
-  //     const response = await axios.method(url, body)
-
-  //     dispatch(apiSuccess({response, entity}))
-  //   } catch (error) {
-  //     dispatch(apiERROR({error, entity}))
-  //   }
-  // }
+  if (action.type.includes(API_REQUEST)) {
+    const { email, password, method, url, entity } = action.payload
+    try {
+      const response = await axios.post(url, email, password)
+      dispatch(apiSuccess({ response, entity }))
+    } catch (error) {
+      dispatch(apiERROR(error, entity))
+    }
+  }
 }

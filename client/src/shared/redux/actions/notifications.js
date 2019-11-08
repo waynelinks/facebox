@@ -1,13 +1,11 @@
 import { SET_NOTIFICATION, REMOVE_NOTIFICATION } from '../constants'
 
-export const setNotification = ({ message, entity }) => ({
-  type: SET_NOTIFICATION,
-  payload: message,
-  meta: { entity }
+export const setNotification = (payload, entity) => ({
+  type: `${entity} ${SET_NOTIFICATION}`,
+  payload
 })
 
-export const removeNotification = ({ notificationID, entity }) => ({
-  type: REMOVE_NOTIFICATION,
-  payload: notificationID,
-  meta: { entity }
+export const removeNotification = (payload, entity) => ({
+  type: `${entity} ${REMOVE_NOTIFICATION}`,
+  payload
 })
