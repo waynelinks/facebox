@@ -19,7 +19,7 @@ server
   .disable('x-powered-by')
   .use(
     '/api',
-    proxy(process.env.RAZZLE_API, {
+    proxy(process.env.RAZZLE_API_PROXY, {
       proxyReqOptDecorator(opts) {
         opts.headers['x-forwarded-host'] = process.env.RAZZLE_HOST
         return opts
@@ -27,7 +27,7 @@ server
     })
   )
   .use(express.static(process.env.RAZZLE_PUBLIC_DIR))
-  .get('/*', (req, res) => {
+  .get('*', (req, res) => {
     // Create a new Redux store instance
     const store = configureStore(req)
 

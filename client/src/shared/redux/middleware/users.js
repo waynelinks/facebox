@@ -1,6 +1,6 @@
 import {
   SIGNUP_USER,
-  FACEBOX_API,
+  FACEBOX_API_SIGNIN,
   USER,
   SIGNIN_USER,
   API_SUCCESS,
@@ -20,14 +20,14 @@ export const userMiddleware = ({ dispatch }) => next => action => {
           email,
           password,
           method: 'POST',
-          url: FACEBOX_API,
+          url: FACEBOX_API_SIGNIN,
           entity: USER
         })
       )
       break
 
     case SIGNIN_USER:
-      dispatch(apiRequest(action.payload, 'POST', FACEBOX_API, USER))
+      dispatch(apiRequest(action.payload, action.api, 'POST', FACEBOX_API_SIGNIN, USER))
       break
 
     case `${USER} ${API_SUCCESS}`:

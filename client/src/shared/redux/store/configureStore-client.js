@@ -9,7 +9,7 @@ import { apiMiddleware } from '../middleware/api'
 
 export default preloadedState => {
   const axiosInstance = Axios.create({
-    base: '/api'
+    baseURL: '/api/api/v1'
   })
 
   const store = createStore(

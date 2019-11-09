@@ -5,10 +5,19 @@ export const signupUser = payload => ({
   payload
 })
 
-export const signinUser = payload => ({
-  type: SIGNIN_USER,
-  payload
-})
+// export const signinUser = payload => ({
+//   type: SIGNIN_USER,
+//   payload
+// })
+
+export const signinUser = payload => (dispatch, getState, api) => {
+
+  dispatch({
+    type: SIGNIN_USER,
+    payload,
+    api
+  })
+}
 
 export const setUser = user => ({
   type: SET_USER,
