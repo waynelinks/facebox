@@ -28,6 +28,7 @@ const SinginForm = ({ signinUser }) => {
             <input
               type='email'
               name='email'
+              autoFocus
               onFocus={() => setEmail(true)}
               onBlur={emailValue === '' ? () => setEmail(false) : null}
               onChange={e => setEmailValue(e.target.value)}

@@ -19,7 +19,7 @@ export const userMiddleware = ({ dispatch }) => next => action => {
         apiRequest({
           email,
           password,
-          method: 'POST',
+          method: 'post',
           url: FACEBOX_API_SIGNIN,
           entity: USER
         })
@@ -32,9 +32,9 @@ export const userMiddleware = ({ dispatch }) => next => action => {
       )
       break
 
-    // case `${USER} ${API_SUCCESS}`:
-    //   dispatch(setErrorNotification(action.payload, USER))
-    //   break
+    case `${USER} ${API_SUCCESS}`:
+      dispatch(setUser(action.payload, USER))
+      break
 
     case `${USER} ${API_ERROR}`:
       dispatch(setErrorNotification(action.error, USER))

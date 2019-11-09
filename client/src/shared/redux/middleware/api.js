@@ -11,7 +11,6 @@ export const apiMiddleware = ({ dispatch }) => next => async action => {
     try {
       // const response = await api.post(url, { email, password })
       const response = await api({ method, url, data: { email, password } })
-      console.log(response)
       dispatch(apiSuccess(response.data, entity))
     } catch (error) {
       dispatch(apiError(error.response.data, entity))
