@@ -1,11 +1,11 @@
 import { SET_ERROR_NOTIFICATION, REMOVE_ERROR_NOTIFICATION } from '../constants'
 // Do the reducers
-export const setErrorNotification = (payload, entity) => ({
+export const setErrorNotification = payload => ({
   type: SET_ERROR_NOTIFICATION,
   payload
 })
 
-export const removeErrorNotification = (payload, entity) => ({
+export const removeErrorNotification = payload => ({
   type: REMOVE_ERROR_NOTIFICATION,
   payload
 })

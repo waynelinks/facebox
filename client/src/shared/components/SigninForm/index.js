@@ -7,7 +7,7 @@ import './index.css'
 import Logo from '../Logo'
 import { signinUser } from '../../redux/actions/users'
 
-const SinginForm = ({ signinUser, session, errorMessage, notifications }) => {
+const SinginForm = ({ signinUser, session, error }) => {
   const { register, handleSubmit } = useForm()
 
   const [email, setEmail] = useState(false)
@@ -17,7 +17,7 @@ const SinginForm = ({ signinUser, session, errorMessage, notifications }) => {
 
   const onSubmit = payload => signinUser(payload)
 
-console.log('Error Mesage: ',notifications)
+  error && console.log('Error Mesage: ', error)
   return (
     <Fragment>
       <div className='form-container'>
@@ -50,7 +50,7 @@ console.log('Error Mesage: ',notifications)
               })}
             />
           </div>
-          {/* {error ? <p className='error'>{error}</p> : ''} */}
+          {error && <p className='error'>{error}</p>}
           <button type='submit'>SIGN IN</button>
           {!session && (
             <Link to='/signup' className='signin2register'>
@@ -64,8 +64,7 @@ console.log('Error Mesage: ',notifications)
 }
 
 const mapStateToProps = ({ users, notifications }) => ({
-  // errorMessage: notifications.message,
-  notifications,
+  error: notifications.error,
   session: users.session
 })
 
