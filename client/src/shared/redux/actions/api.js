@@ -10,7 +10,7 @@ export const apiSuccess = (response, entity) => ({
   payload: { response, entity }
 })
 
-export const apiERROR = (error, entity) => ({
+export const apiError = (error, entity) => ({
   type: `${entity} ${API_ERROR}`,
   error
 })

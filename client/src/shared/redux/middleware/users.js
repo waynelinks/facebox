@@ -8,7 +8,7 @@ import {
 } from '../constants'
 import { apiRequest } from '../actions/api'
 import { setUser } from '../actions/users'
-import { setNotification } from '../actions/notifications'
+import { setErrorNotification } from '../actions/notifications'
 
 export const userMiddleware = ({ dispatch }) => next => action => {
   next(action)
@@ -27,19 +27,17 @@ export const userMiddleware = ({ dispatch }) => next => action => {
       break
 
     case SIGNIN_USER:
-      dispatch(apiRequest(action.payload, action.api, 'POST', FACEBOX_API_SIGNIN, USER))
-      break
-
-    case `${USER} ${API_SUCCESS}`:
       dispatch(
-        setUser({
-          user: action.payload
-        })
+        apiRequest(action.payload, action.api, 'POST', FACEBOX_API_SIGNIN, USER)
       )
       break
 
+    // case `${USER} ${API_SUCCESS}`:
+    //   dispatch(setErrorNotification(action.payload, USER))
+    //   break
+
     case `${USER} ${API_ERROR}`:
-      dispatch(setNotification(action.payload, USER))
+      dispatch(setErrorNotification(action.error, USER))
       break
   }
 }

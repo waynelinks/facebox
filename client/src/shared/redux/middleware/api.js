@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { API_REQUEST, FACEBOX_API, USER } from '../constants'
-import { apiSuccess, apiERROR } from '../actions/api'
+import { apiSuccess, apiError } from '../actions/api'
 
 export const apiMiddleware = ({ dispatch }) => next => async action => {
   next(action)
@@ -10,9 +10,9 @@ export const apiMiddleware = ({ dispatch }) => next => async action => {
 
     try {
       const response = await api.post(url, { email, password })
-      dispatch(apiSuccess(response, entity ))
+      dispatch(apiSuccess(response.data, entity))
     } catch (error) {
-      dispatch(apiERROR(error, entity))
+      dispatch(apiError(error.response.data, entity))
     }
   }
 }
