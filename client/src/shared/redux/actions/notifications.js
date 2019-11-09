@@ -4,8 +4,3 @@ export const setErrorNotification = payload => ({
   type: SET_ERROR_NOTIFICATION,
   payload
 })
-
-export const removeErrorNotification = payload => ({
-  type: REMOVE_ERROR_NOTIFICATION,
-  payload
-})
