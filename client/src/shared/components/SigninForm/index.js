@@ -18,7 +18,7 @@ const SinginForm = ({ signinUser, session, error }) => {
   const onSubmit = payload => signinUser(payload)
 
   return session ? (
-    <Redirect to='/signup' />
+    <Redirect to='/' />
   ) : (
     <Fragment>
       <div className='form-container'>
