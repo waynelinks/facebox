@@ -7,7 +7,7 @@ import './index.css'
 import Logo from '../Logo'
 import { signinUser } from '../../redux/actions/users'
 
-const SinginForm = ({ signinUser }) => {
+const SinginForm = ({ signinUser, session }) => {
   const { register, handleSubmit } = useForm()
 
   const [email, setEmail] = useState(false)
@@ -16,6 +16,8 @@ const SinginForm = ({ signinUser }) => {
   const [passwordValue, setPasswordValue] = useState('')
 
   const onSubmit = payload => signinUser(payload)
+
+  console.log(session)
 
   return (
     <Fragment>
@@ -51,11 +53,11 @@ const SinginForm = ({ signinUser }) => {
           </div>
           {/* {error ? <p className='error'>{error}</p> : ''} */}
           <button type='submit'>SIGN IN</button>
-          {/* {isSignedIn ? null : (
-            <Link to='/register' className='signin2register'>
+          {!session && (
+            <Link to='/signup' className='signin2register'>
               Register
             </Link>
-          )} */}
+          )}
         </form>
       </div>
     </Fragment>
