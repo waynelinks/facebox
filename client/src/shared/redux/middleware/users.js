@@ -28,7 +28,7 @@ export const userMiddleware = ({ dispatch }) => next => action => {
 
     case SIGNIN_USER:
       dispatch(
-        apiRequest(action.payload, action.api, 'POST', FACEBOX_API_SIGNIN, USER)
+        apiRequest(action.payload, action.api, 'post', FACEBOX_API_SIGNIN, USER)
       )
       break
 
