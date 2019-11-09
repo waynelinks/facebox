@@ -6,6 +6,7 @@ import rootReducer from '../reducers'
 import thunk from 'redux-thunk'
 import { userMiddleware } from '../middleware/users'
 import { apiMiddleware } from '../middleware/api'
+import { notificationsMiddleware } from '../middleware/notificationMiddleware'
 
 export default preloadedState => {
   const axiosInstance = Axios.create({
@@ -19,7 +20,8 @@ export default preloadedState => {
       applyMiddleware(
         thunk.withExtraArgument(axiosInstance),
         userMiddleware,
-        apiMiddleware
+        apiMiddleware,
+        notificationsMiddleware
       )
     )
   )

@@ -8,7 +8,7 @@ import {
 } from '../constants'
 import { apiRequest } from '../actions/api'
 import { setUser } from '../actions/users'
-import { setErrorNotification } from '../actions/notifications'
+import { setErrorNotification, removeErrorNotification } from '../actions/notifications'
 
 export const userMiddleware = ({ dispatch }) => next => action => {
   next(action)
@@ -37,7 +37,8 @@ export const userMiddleware = ({ dispatch }) => next => action => {
       break
 
     case `${USER} ${API_ERROR}`:
-      dispatch(setErrorNotification(action.payload, USER))
+      dispatch(setErrorNotification(action.payload))
+      dispatch(removeErrorNotification(action.payload))
       break
   }
 }
