@@ -37,7 +37,7 @@ export const userMiddleware = ({ dispatch }) => next => action => {
       break
 
     case `${USER} ${API_ERROR}`:
-      dispatch(setErrorNotification(action.error, USER))
+      dispatch(setErrorNotification(action.payload, USER))
       break
   }
 }
