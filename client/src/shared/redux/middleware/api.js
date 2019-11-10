@@ -6,11 +6,11 @@ export const apiMiddleware = ({ dispatch }) => next => async action => {
   next(action)
 
   if (action.type.includes(API_REQUEST)) {
-    const { email, password, api, method, url, entity } = action.payload
+    const { name, email, password, api, method, url, entity } = action.payload
 
     try {
       // const response = await api.post(url, { email, password })
-      const response = await api({ method, url, data: { email, password } })
+      const response = await api({ method, url, data: {name, email, password } })
       dispatch(apiSuccess(response.data, entity))
     } catch (error) {
       dispatch(apiError(error.response.data, entity))
