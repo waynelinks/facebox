@@ -33,9 +33,10 @@ const SingupForm = ({ signupUser, session, error }) => {
             <input
               type='text'
               name='name'
+              autoFocus
               onFocus={() => {
                 setName(true)
-                setRegistration(false)
+                // setRegistration(false)
               }}
               onBlur={nameValue === '' ? () => setName(false) : null}
               onChange={e => setNameValue(e.target.value)}
@@ -47,7 +48,6 @@ const SingupForm = ({ signupUser, session, error }) => {
             <input
               type='email'
               name='email'
-              autoFocus
               onFocus={() => setEmail(true)}
               onBlur={emailValue === '' ? () => setEmail(false) : null}
               onChange={e => setEmailValue(e.target.value)}
