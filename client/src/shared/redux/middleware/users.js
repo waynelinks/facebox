@@ -15,14 +15,8 @@ export const userMiddleware = ({ dispatch }) => next => action => {
 
   switch (action.type) {
     case SIGNUP_USER:
-      next(
-        apiRequest({
-          email,
-          password,
-          method: 'post',
-          url: FACEBOX_API_SIGNIN,
-          entity: USER
-        })
+      dispatch(
+        apiRequest(action.payload, action.api, 'post', FACEBOX_API_SIGNIN, USER)
       )
       break
 

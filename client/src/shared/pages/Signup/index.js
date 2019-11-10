@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import SignupForm from '../../components/SignupForm'
 
+
 const Signup = () => {
   return (
     <Fragment>
