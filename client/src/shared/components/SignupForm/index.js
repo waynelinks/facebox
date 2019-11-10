@@ -27,7 +27,7 @@ const SingupForm = ({ signupUser, session, error }) => {
       <div className='form-container'>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Logo />
-          <h3>Signin with credentials</h3>
+          <h3>Signup with credentials</h3>
           <div className='field-group'>
             <label className={name ? 'field-active' : ''}>First Name</label>
             <input
