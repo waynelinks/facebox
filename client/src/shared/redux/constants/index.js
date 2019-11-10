@@ -6,6 +6,7 @@ export const SET_USER = 'SET_USER'
 export const SET_ERROR_NOTIFICATION = 'SET_ERROR_NOTIFICATION'
 
 export const FACEBOX_API_SIGNIN = process.env.RAZZLE_API_SIGNIN
+export const FACEBOX_API_SIGNUP = process.env.RAZZLE_API_SIGNUP
 
 export const API_REQUEST = 'API_REQUEST'
 export const API_SUCCESS = 'API_SUCCESS'

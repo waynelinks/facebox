@@ -4,7 +4,8 @@ import {
   USER,
   SIGNIN_USER,
   API_SUCCESS,
-  API_ERROR
+  API_ERROR,
+  FACEBOX_API_SIGNUP
 } from '../constants'
 import { apiRequest } from '../actions/api'
 import { setUser } from '../actions/users'
@@ -16,7 +17,7 @@ export const userMiddleware = ({ dispatch }) => next => action => {
   switch (action.type) {
     case SIGNUP_USER:
       dispatch(
-        apiRequest(action.payload, action.api, 'post', FACEBOX_API_SIGNIN, USER)
+        apiRequest(action.payload, action.api, 'post', FACEBOX_API_SIGNUP, USER)
       )
       break
 
