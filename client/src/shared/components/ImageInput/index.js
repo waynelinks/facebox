@@ -9,7 +9,6 @@ import { clarifaiAPIcall } from '../../redux/actions/clarifai'
 
 const ImageInput = ({ clarifaiAPIcall }) => {
   const { register, handleSubmit } = useForm()
-  const name = 'wayne'
   const onSubmit = url => clarifaiAPIcall(url)
 
   return (

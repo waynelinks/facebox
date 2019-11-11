@@ -3,19 +3,19 @@ import { connect } from 'react-redux'
 
 import './index.css'
 
-const FaceRecognizer = ({ stateprops }) => {
+const FaceRecognizer = ({ image }) => {
   return (
     <div className='facebox'>
       <img
-        src='https://i2-prod.mirror.co.uk/incoming/article14334083.ece/ALTERNATES/s615/3_Beautiful-girl-with-a-gentle-smile.jpg'
+        src={image}
         alt=''
       />
     </div>
   )
 }
 
-const mapStateToProps = ({ state }) => ({
-  state
+const mapStateToProps = ({ clarifai }) => ({
+  image: clarifai.image_input
 })
 
 export default connect(mapStateToProps)(FaceRecognizer)

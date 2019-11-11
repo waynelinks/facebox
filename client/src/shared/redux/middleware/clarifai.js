@@ -7,6 +7,7 @@ import { clarifaiApiRequest } from '../actions/api'
 
 export const clarifaiMiddleware = ({ dispatch }) => next => action => {
   next(action)
+  console.log('clarifai middleware: ', action.payload)
 
   switch (action.type) {
     case CLARIFAI_API_CALL:

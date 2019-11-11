@@ -8,7 +8,7 @@ import NavBar from './components/NavBar'
 const App = ({ route, session }) => {
   return (
     <div className='App-container'>
-      {!session && (
+      {session && (
         <Fragment>
           <NavBar session={session} />
         </Fragment>
