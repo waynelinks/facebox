@@ -1,4 +1,4 @@
-import { SIGNUP_USER, SET_USER, SIGNIN_USER } from '../constants'
+import { SIGNUP_USER, SET_USER, SIGNIN_USER, SIGNOUT_USER } from '../constants'
 
 export const signupUser = payload => (dispatch, getState, api) => {
   dispatch({

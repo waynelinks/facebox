@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-import { signoutUser } from '../../redux/actions'
+import { signoutUser } from '../../redux/actions/users'
 import './index.css'
 
 const SignoutButton = ({ signoutUser }) => {

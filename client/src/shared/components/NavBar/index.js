@@ -8,7 +8,7 @@ const NavBar = ({ session }) => {
   return (
     <nav>
       <Logo />
-      {/* {!session && <SignoutButton />} */}
+      {session && <SignoutButton />}
     </nav>
   )
 }
