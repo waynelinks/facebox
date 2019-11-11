@@ -3,11 +3,11 @@ import React from 'react'
 import './index.css'
 import Logo from '../Logo'
 
-const NavBar = ({ isSignedIn }) => {
+const NavBar = ({ session }) => {
   return (
     <nav>
       <Logo />
-      {!isSignedIn && <Signout loginStatus={isSignedIn} />}
+      {!session && <Signout loginStatus={isSignedIn} />}
     </nav>
   )
 }
