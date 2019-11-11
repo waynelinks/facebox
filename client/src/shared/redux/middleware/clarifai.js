@@ -3,7 +3,7 @@ import {
   FACEBOX_CLARIFAI_API_CALL,
   CLARIFAI_URL
 } from '../constants'
-import { apiRequest } from '../actions/api'
+import { clarifaiApiRequest } from '../actions/api'
 
 export const clarifaiMiddleware = ({ dispatch }) => next => action => {
   next(action)
@@ -11,7 +11,7 @@ export const clarifaiMiddleware = ({ dispatch }) => next => action => {
   switch (action.type) {
     case CLARIFAI_API_CALL:
       dispatch(
-        apiRequest(
+        clarifaiApiRequest(
           action.payload,
           action.api,
           'post',

@@ -1,4 +1,4 @@
-import { API_REQUEST, API_SUCCESS, API_ERROR } from '../constants'
+import { API_REQUEST, CLARIFAI_API_REQUEST, API_SUCCESS, API_ERROR } from '../constants'
 
 export const apiRequest = (
   { name, email, password },
@@ -9,6 +9,17 @@ export const apiRequest = (
 ) => ({
   type: `${entity} ${API_REQUEST}`,
   payload: { name, email, password, api, method, url, entity }
+})
+
+export const clarifaiApiRequest = (
+  { image_input },
+  api,
+  method,
+  url,
+  entity
+) => ({
+  type: `${entity} ${CLARIFAI_API_REQUEST}`,
+  payload: { image_input, api, method, url, entity }
 })
 
 export const apiSuccess = (response, entity) => ({
