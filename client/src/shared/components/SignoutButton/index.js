@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { signoutUser } from '../../redux/actions'
 import './index.css'
 
-const Signout = ({ signoutUser }) => {
+const SignoutButton = ({ signoutUser }) => {
   const onSignout = payload => signoutUser(payload)
 
   return (
@@ -20,4 +20,4 @@ const Signout = ({ signoutUser }) => {
 export default connect(
   null,
   { signoutUser }
-)(Signout)
+)(SignoutButton)

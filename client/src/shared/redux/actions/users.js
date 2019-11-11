@@ -1,6 +1,5 @@
 import { SIGNUP_USER, SET_USER, SIGNIN_USER } from '../constants'
 
-
 export const signupUser = payload => (dispatch, getState, api) => {
   dispatch({
     type: SIGNUP_USER,
@@ -16,6 +15,11 @@ export const signinUser = payload => (dispatch, getState, api) => {
     api
   })
 }
+
+export const signoutUser = payload => ({
+  type: SIGNOUT_USER,
+  payload
+})
 
 export const setUser = payload => ({
   type: SET_USER,
