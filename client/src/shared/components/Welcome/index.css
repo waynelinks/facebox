@@ -1,0 +1,11 @@
+.welcome {
+  grid-area: welcome;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome h1 {
+  font-weight: 400;
+}

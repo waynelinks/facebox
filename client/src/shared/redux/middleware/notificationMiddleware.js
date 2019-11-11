@@ -7,7 +7,6 @@ export const notificationsMiddleware = ({
   next(action)
 
   setTimeout(() => {
-    console.log('notification middleware')
     if (action.type.includes(SET_ERROR_NOTIFICATION)) {
       next(setErrorNotification({ error: '' }))
     }
