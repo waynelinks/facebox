@@ -3,16 +3,20 @@ import { connect } from 'react-redux'
 import useForm from 'react-hook-form'
 
 import './index.css'
-// import { image_API_call } from '../../actions'
+import Rank from '../Rank'
+import Welcome from '../Welcome'
+import { clarifaiAPIcall } from '../../redux/actions'
 
-const ImageInput = ({ image_API_call }) => {
+const ImageInput = ({ clarifaiAPIcall }) => {
   const { register, handleSubmit } = useForm()
   const name = 'wayne'
-  const onSubmit = name => image_API_call(name)
+  const onSubmit = url => clarifaiAPIcall(url)
 
   return (
     <Fragment>
       <div className='imageForm-container'>
+        <Welcome />
+        <Rank />
         <form onSubmit={handleSubmit(onSubmit)}>
           <input
             type='text'
@@ -30,5 +34,5 @@ const ImageInput = ({ image_API_call }) => {
 
 export default connect(
   null
-  // { image_API_call }
+  { clarifaiAPIcall }
 )(ImageInput)

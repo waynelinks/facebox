@@ -3,7 +3,6 @@ import { renderRoutes } from 'react-router-config'
 import { connect } from 'react-redux'
 
 import './App.css'
-import Welcome from './components/Welcome'
 import NavBar from './components/NavBar'
 
 const App = ({ route, session }) => {
@@ -12,7 +11,6 @@ const App = ({ route, session }) => {
       {!session && (
         <Fragment>
           <NavBar session={session} />
-          <Welcome />
         </Fragment>
       )}
       {renderRoutes(route.routes)}

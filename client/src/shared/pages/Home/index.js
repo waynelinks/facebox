@@ -4,16 +4,18 @@ import { Redirect } from 'react-router-dom'
 
 import './index.css'
 import ImageInput from '../../components/ImageInput'
+import FaceRecognizer from '../../components/FaceRecognizer'
 
 const Home = ({ session }) => {
-  if (!session) {    
+  if (!session) {
     return (
       <div className='home-container'>
+        <FaceRecognizer />
         <ImageInput />
       </div>
-    )    
+    )
   }
-  
+
   return <Redirect to='/signin' />
 }
 

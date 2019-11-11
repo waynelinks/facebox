@@ -20,10 +20,9 @@ body {
 
   display: grid;
   grid-template-columns: 5em 1fr 1fr 5em;
-  grid-template-rows: 10vh 15vh 1fr;
+  grid-template-rows: 10vh 1fr;
   gap: 10px;
   grid-template-areas:
     'nav nav nav nav'
-    '. welcome welcome .'
     '. home home .';
 }
