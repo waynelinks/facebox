@@ -5,7 +5,7 @@ import useForm from 'react-hook-form'
 import './index.css'
 import Rank from '../Rank'
 import Welcome from '../Welcome'
-import { clarifaiAPIcall } from '../../redux/actions'
+import { clarifaiAPIcall } from '../../redux/actions/clarifai'
 
 const ImageInput = ({ clarifaiAPIcall }) => {
   const { register, handleSubmit } = useForm()
@@ -33,6 +33,6 @@ const ImageInput = ({ clarifaiAPIcall }) => {
 }
 
 export default connect(
-  null
+  null,
   { clarifaiAPIcall }
 )(ImageInput)
