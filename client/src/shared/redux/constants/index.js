@@ -1,4 +1,5 @@
 export const USER = 'USER'
+export const CLARIFAI_URL = 'CLARIFAI_URL'
 export const SIGNUP_USER = 'SIGNUP_USER'
 export const SIGNIN_USER = 'SIGNIN_USER'
 export const SIGNOUT_USER = 'SIGNOUT_USER'
