@@ -6,7 +6,7 @@ import './index.css'
 import ImageInput from '../../components/ImageInput'
 
 const Home = ({ session }) => {
-  if (session) {    
+  if (!session) {    
     return (
       <div className='home-container'>
         <ImageInput />

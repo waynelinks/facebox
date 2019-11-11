@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import { connect } from 'react-redux'
 import useForm from 'react-hook-form'
 
+import './index.css'
 // import { image_API_call } from '../../actions'
 
 const ImageInput = ({ image_API_call }) => {
@@ -11,11 +12,16 @@ const ImageInput = ({ image_API_call }) => {
 
   return (
     <Fragment>
-      <div className='form-container'>
+      <div className='imageForm-container'>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <input type='name' placeholder='name' name='name' ref={register} />
+          <input
+            type='text'
+            placeholder='Enter image url'
+            name='image_input'
+            ref={register}
+          />
 
-          <input type='submit' />
+          <button>Submit</button>
         </form>
       </div>
     </Fragment>
@@ -23,6 +29,6 @@ const ImageInput = ({ image_API_call }) => {
 }
 
 export default connect(
-  null,
+  null
   // { image_API_call }
 )(ImageInput)
