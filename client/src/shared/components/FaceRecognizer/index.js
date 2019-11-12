@@ -14,8 +14,8 @@ const FaceRecognizer = ({ image }) => {
   )
 }
 
-const mapStateToProps = ({ clarifai }) => ({
-  image: clarifai.image_input
+const mapStateToProps = ({ image }) => ({
+  image: image.image_input
 })
 
 export default connect(mapStateToProps)(FaceRecognizer)

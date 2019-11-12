@@ -5,11 +5,11 @@ import useForm from 'react-hook-form'
 import './index.css'
 import Rank from '../Rank'
 import Welcome from '../Welcome'
-import { clarifaiAPIcall } from '../../redux/actions/clarifai'
+import { imageApiCall } from '../../redux/actions/image'
 
-const ImageInput = ({ clarifaiAPIcall }) => {
+const ImageInput = ({ imageApiCall, id }) => {
   const { register, handleSubmit } = useForm()
-  const onSubmit = url => clarifaiAPIcall(url)
+  const onSubmit = image_input => imageApiCall({image_input, id})
 
   return (
     <Fragment>
@@ -31,7 +31,12 @@ const ImageInput = ({ clarifaiAPIcall }) => {
   )
 }
 
+const mapStateToProps = ({users}) => ({
+  id: users.response.id
+})
+
+
 export default connect(
-  null,
-  { clarifaiAPIcall }
+  mapStateToProps,
+  { imageApiCall }
 )(ImageInput)

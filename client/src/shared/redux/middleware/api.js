@@ -1,5 +1,4 @@
-import axios from 'axios'
-import { API_REQUEST, FACEBOX_API, USER, CLARIFAI_API_REQUEST } from '../constants'
+import { API_REQUEST, FACEBOX_API, USER, IMAGE_API_REQUEST } from '../constants'
 import { apiSuccess, apiError } from '../actions/api'
 
 export const apiMiddleware = ({ dispatch }) => next => async action => {
@@ -19,15 +18,15 @@ export const apiMiddleware = ({ dispatch }) => next => async action => {
       dispatch(apiError(error.response.data, entity))
     }
   }
-  
-  if (action.type.includes(CLARIFAI_API_REQUEST)) {
-    const { image_input, api, method, url, entity } = action.payload
 
+  if (action.type.includes(IMAGE_API_REQUEST)) {
+    const { image_input, id, api, method, url, entity } = action.payload
+    // console.log('Middleware: ',imageUrl)
     try {
       const response = await api({
         method,
         url,
-        data: { image_input }
+        data: { image_input, id }
       })
       dispatch(apiSuccess(response.data, entity))
     } catch (error) {
