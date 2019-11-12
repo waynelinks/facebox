@@ -1,11 +1,12 @@
 import { IMAGE_API_CALL } from '../constants'
 
-const initialState = {}
+const initialState = {image_input: null}
 
 export default (state = initialState, { type, payload }) => {
   switch (type) {
     case IMAGE_API_CALL:
-      return { ...state, ...payload }
+      console.log('image reducer: ', payload)
+      return { ...state, ...payload, image_input: payload.image_input.image_input }
 
     default:
       return state

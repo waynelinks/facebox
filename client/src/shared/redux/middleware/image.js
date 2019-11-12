@@ -6,7 +6,6 @@ export const imageMiddleware = ({ dispatch }) => next => action => {
 
   switch (action.type) {
     case IMAGE_API_CALL:
-      console.log('Clarifai Middleware: ', action.payload)
       dispatch(
         imageApiRequest(
           action.payload,

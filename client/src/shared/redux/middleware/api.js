@@ -21,7 +21,7 @@ export const apiMiddleware = ({ dispatch }) => next => async action => {
 
   if (action.type.includes(IMAGE_API_REQUEST)) {
     const { image_input, id, api, method, url, entity } = action.payload
-    // console.log('Middleware: ',imageUrl)
+    
     try {
       const response = await api({
         method,
