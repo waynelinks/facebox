@@ -15,7 +15,7 @@ const FaceRecognizer = ({ image }) => {
 }
 
 const mapStateToProps = ({ image }) => ({
-  image: image.image_input
+  image: image.image
 })
 
 export default connect(mapStateToProps)(FaceRecognizer)

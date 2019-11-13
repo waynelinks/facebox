@@ -1,18 +1,17 @@
-import { IMAGE_API_CALL, FACEBOX_IMAGE_API_CALL, IMAGE } from '../constants'
+import { PROCESS_IMAGE, FACEBOX_PROCESS_IMAGE, IMAGE } from '../constants'
 import { apiRequest } from '../actions/api'
 
 export const imageMiddleware = ({ dispatch }) => next => action => {
   next(action)
 
   switch (action.type) {
-    case IMAGE_API_CALL:
-      console.log('image middleware: ',action.payload)
+    case PROCESS_IMAGE:
       dispatch(
         apiRequest(
           action.payload,
           action.api,
           'post',
-          FACEBOX_IMAGE_API_CALL,
+          FACEBOX_PROCESS_IMAGE,
           IMAGE
         )
       )

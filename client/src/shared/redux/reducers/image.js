@@ -1,14 +1,14 @@
-import { IMAGE_API_CALL, SET_ENTRIES } from '../constants'
+import { PROCESS_IMAGE, SET_ENTRIES } from '../constants'
 
-const initialState = { image_input: null, entries: null }
+const initialState = { image: null, entries: null }
 
 export default (state = initialState, { type, payload }) => {
   switch (type) {
-    case IMAGE_API_CALL:
+    case PROCESS_IMAGE:
       return {
         ...state,
         ...payload,
-        image_input: payload.image_input.image_input
+        image: payload.image
       }
     case SET_ENTRIES:
       console.log('image reducer: ', payload)
