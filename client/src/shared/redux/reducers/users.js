@@ -1,8 +1,7 @@
 import { SET_USER, SIGNOUT_USER } from '../constants'
 
 const initialState = {
-  session: false,
-  response: {}
+  session: false
 }
 
 export default (state = initialState, { type, payload }) => {

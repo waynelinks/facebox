@@ -31,7 +31,7 @@ export const userMiddleware = ({ dispatch }) => next => action => {
 
     case `${USER} ${API_SUCCESS}`:
       dispatch(setUser(action.payload, USER))
-      dispatch(setEntries(action.payload, IMAGE))
+      dispatch(setEntries(action.payload.response.entries, IMAGE))
     
       break
 

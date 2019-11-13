@@ -6,12 +6,20 @@ export const apiMiddleware = ({ dispatch }) => next => async action => {
 
   switch (action.type) {
     case `${USER} ${API_REQUEST}`:
-      console.log(typeof action.payload)
-      // const { } = action.paylaod
-      break;
-  
+      const data = action.payload
+      const { api, method, url, entity } = action.properties
+
+      try {
+        const res = await api({ method, url, data })
+
+        dispatch(apiSuccess(res.data, entity))
+      } catch (ex) {
+        dispatch(apiError(ex.res.data, entity))
+      }
+      break
+
     default:
-      break;
+      break
   }
 
   // if (action.type.includes(API_REQUEST)) {
