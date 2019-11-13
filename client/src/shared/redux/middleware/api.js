@@ -21,5 +21,4 @@ export const apiMiddleware = ({ dispatch }) => next => async action => {
     default:
       break
   }
-
 }

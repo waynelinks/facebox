@@ -1,5 +1,6 @@
-import { PROCESS_IMAGE, FACEBOX_PROCESS_IMAGE, IMAGE } from '../constants'
+import { PROCESS_IMAGE, FACEBOX_PROCESS_IMAGE, IMAGE, API_SUCCESS, API_ERROR } from '../constants'
 import { apiRequest } from '../actions/api'
+import { setEntries } from '../actions/image'
 
 export const imageMiddleware = ({ dispatch }) => next => action => {
   next(action)
@@ -15,6 +16,12 @@ export const imageMiddleware = ({ dispatch }) => next => action => {
           IMAGE
         )
       )
+      break
+    case `${IMAGE} ${API_SUCCESS}`:
+      dispatch(setEntries(action.payload.response.entries, IMAGE))
+      break
+    case `${IMAGE} ${API_ERROR}`:
+      dispatch(setErrorNotification(action.payload))
       break
   }
 }
