@@ -1,4 +1,4 @@
-import { IMAGE_API_CALL, FACEBOX_IMAGE_API_CALL, IMAGE_URL } from '../constants'
+import { IMAGE_API_CALL, FACEBOX_IMAGE_API_CALL, IMAGE } from '../constants'
 import { imageApiRequest } from '../actions/api'
 
 export const imageMiddleware = ({ dispatch }) => next => action => {
@@ -12,7 +12,7 @@ export const imageMiddleware = ({ dispatch }) => next => action => {
           action.api,
           'post',
           FACEBOX_IMAGE_API_CALL,
-          IMAGE_URL
+          IMAGE
         )
       )
       break

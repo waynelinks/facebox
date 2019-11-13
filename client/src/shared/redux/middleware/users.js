@@ -5,11 +5,13 @@ import {
   SIGNIN_USER,
   API_SUCCESS,
   API_ERROR,
-  FACEBOX_API_SIGNUP
+  FACEBOX_API_SIGNUP,
+  IMAGE
 } from '../constants'
 import { apiRequest } from '../actions/api'
 import { setUser } from '../actions/users'
 import { setErrorNotification } from '../actions/notifications'
+import { setEntries } from '../actions/image'
 
 export const userMiddleware = ({ dispatch }) => next => action => {
   next(action)
@@ -29,6 +31,8 @@ export const userMiddleware = ({ dispatch }) => next => action => {
 
     case `${USER} ${API_SUCCESS}`:
       dispatch(setUser(action.payload, USER))
+      dispatch(setEntries(action.payload, IMAGE))
+    
       break
 
     case `${USER} ${API_ERROR}`:

@@ -1,20 +1,21 @@
-import {
-  API_REQUEST,
-  API_SUCCESS,
-  API_ERROR,
-  IMAGE_API_REQUEST
-} from '../constants'
+import { API_REQUEST, API_SUCCESS, API_ERROR } from '../constants'
 
-export const apiRequest = (
-  { name, email, password },
-  api,
-  method,
-  url,
-  entity
-) => ({
+export const apiRequest = (payload, api, method, url, entity) => ({
   type: `${entity} ${API_REQUEST}`,
-  payload: { name, email, password, api, method, url, entity }
+  payload,
+  properties: { api, method, url, entity }
 })
+
+// export const apiRequest = (
+//   { name, email, password },
+//   api,
+//   method,
+//   url,
+//   entity
+// ) => ({
+//   type: `${entity} ${API_REQUEST}`,
+//   payload: { name, email, password, api, method, url, entity }
+// })
 
 export const imageApiRequest = (
   { image_input, id },
@@ -23,7 +24,7 @@ export const imageApiRequest = (
   url,
   entity
 ) => ({
-  type: `${entity} ${IMAGE_API_REQUEST}`,
+  type: `${entity} ${API_REQUEST}`,
   payload: {
     image_input: image_input.image_input,
     id,

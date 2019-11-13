@@ -1,4 +1,4 @@
-import { IMAGE_API_CALL } from '../constants'
+import { IMAGE_API_CALL, SET_ENTRIES } from '../constants'
 
 export const imageApiCall = payload => (dispatch, getState, api) => {
   dispatch({
@@ -7,3 +7,8 @@ export const imageApiCall = payload => (dispatch, getState, api) => {
     api
   })
 }
+
+export const setEntries = payload => ({
+  type: SET_ENTRIES,
+  payload
+})

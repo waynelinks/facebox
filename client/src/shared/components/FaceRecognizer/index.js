@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import './index.css'
 
 const FaceRecognizer = ({ image }) => {
-  console.log('FaceBOX',image)
   return (
     <div className='facebox'>
       <img
