@@ -11,7 +11,7 @@ export const FACEBOX_API_SIGNIN = process.env.RAZZLE_API_SIGNIN
 export const FACEBOX_API_SIGNUP = process.env.RAZZLE_API_SIGNUP
 export const FACEBOX_IMAGE_API_CALL = process.env.RAZZLE_IMAGE_API_CALL
 
-export const IMAGE_API_CALL = 'IMAGE_API_CALL'
+export const PROCESS_IMAGE = 'PROCESS_IMAGE'
 export const SET_ENTRIES = 'SET_ENTRIES'
 
 export const API_REQUEST = 'API_REQUEST'

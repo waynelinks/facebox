@@ -6,6 +6,7 @@ export const imageMiddleware = ({ dispatch }) => next => action => {
 
   switch (action.type) {
     case IMAGE_API_CALL:
+      console.log('image middleware: ',action.payload)
       dispatch(
         apiRequest(
           action.payload,

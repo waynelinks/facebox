@@ -5,11 +5,11 @@ import useForm from 'react-hook-form'
 import './index.css'
 import Rank from '../Rank'
 import Welcome from '../Welcome'
-import { imageApiCall } from '../../redux/actions/image'
+import { processImage } from '../../redux/actions/image'
 
-const ImageInput = ({ imageApiCall, id }) => {
+const ImageInput = ({ processImage, id }) => {
   const { register, handleSubmit } = useForm()
-  const onSubmit = image_input => imageApiCall({image_input, id})
+  const onSubmit = ({ image }) => processImage({ image, id })
 
   return (
     <Fragment>
@@ -20,7 +20,7 @@ const ImageInput = ({ imageApiCall, id }) => {
           <input
             type='text'
             placeholder='Enter image url'
-            name='image_input'
+            name='image'
             ref={register}
           />
 
@@ -31,12 +31,11 @@ const ImageInput = ({ imageApiCall, id }) => {
   )
 }
 
-const mapStateToProps = ({users}) => ({
+const mapStateToProps = ({ users }) => ({
   id: users.response.id
 })
 
-
 export default connect(
   mapStateToProps,
-  { imageApiCall }
+  { processImage }
 )(ImageInput)
