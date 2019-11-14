@@ -6,10 +6,7 @@ import './index.css'
 const FaceRecognizer = ({ image }) => {
   return (
     <div className='facebox'>
-      <img
-        src={image}
-        alt=''
-      />
+      <img id='image' src={image} alt='' />
     </div>
   )
 }

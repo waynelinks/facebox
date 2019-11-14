@@ -11,7 +11,6 @@ export default (state = initialState, { type, payload }) => {
         image: payload.image
       }
     case SET_ENTRIES:
-      console.log('image reducer: ', payload)
       return { ...state, entries: payload }
 
     default:
