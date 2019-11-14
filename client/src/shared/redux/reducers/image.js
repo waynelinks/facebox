@@ -1,6 +1,6 @@
-import { PROCESS_IMAGE, SET_ENTRIES } from '../constants'
+import { PROCESS_IMAGE, SET_ENTRIES, SET_FACE } from '../constants'
 
-const initialState = { image: null, entries: null }
+const initialState = { image: null, entries: null, box: null }
 
 export default (state = initialState, { type, payload }) => {
   switch (type) {
@@ -10,6 +10,9 @@ export default (state = initialState, { type, payload }) => {
         ...payload,
         image: payload.image
       }
+    case SET_FACE:
+      console.log(payload)
+      return { ...state, box: payload }
     case SET_ENTRIES:
       return { ...state, entries: payload }
 
