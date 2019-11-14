@@ -5,13 +5,16 @@ import { Redirect } from 'react-router-dom'
 import './index.css'
 import ImageInput from '../../components/ImageInput'
 import FaceRecognizer from '../../components/FaceRecognizer'
+import Welcome from '../../components/Welcome'
+import NavBar from '../../components/NavBar'
 
 const Home = ({ session }) => {
   if (session) {
     return (
       <div className='home-container'>
-        <FaceRecognizer />
-        <ImageInput />
+          <NavBar session={session} />
+        {/* <FaceRecognizer /> */}
+        {/* <ImageInput /> */}
       </div>
     )
   }

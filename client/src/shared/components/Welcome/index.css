@@ -1,13 +1,13 @@
 .welcome {
   grid-area: welcome;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  /* width: 100%; */
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* text-align: center; */
 }
 
-.welcome h1 {
+/* .welcome h1 {
   font-weight: 400;
   justify-self: center;
-}
+} */

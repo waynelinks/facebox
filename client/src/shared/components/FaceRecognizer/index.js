@@ -7,15 +7,17 @@ const FaceRecognizer = ({ image, box }) => {
   return (
     <div className='facebox'>
       <img id='image' src={image} alt='' />
-      <div
-        className='bounding-box'
-        style={{
-          top: box.topRow,
-          right: box.rightCol,
-          bottom: box.bottomRow,
-          left: box.leftCol
-        }}
-      ></div>
+      {box && (
+        <div
+          className='bounding-box'
+          style={{
+            top: box.topRow,
+            right: box.rightCol,
+            bottom: box.bottomRow,
+            left: box.leftCol
+          }}
+        ></div>
+      )}
     </div>
   )
 }
